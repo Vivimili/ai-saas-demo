@@ -1,0 +1,8 @@
+{
+  "name": "VitalSync SaaS - Healthcare Management",
+  "description": "A comprehensive healthcare management SaaS platform featuring an advanced dashboard for medical practitioners and a professional landing page.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
