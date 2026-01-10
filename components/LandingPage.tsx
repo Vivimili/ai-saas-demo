@@ -15,6 +15,14 @@ import {
 } from 'lucide-react';
 
 const LandingPage: React.FC = () => {
+  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    e.preventDefault();
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="bg-white">
       {/* Navigation */}
@@ -26,10 +34,10 @@ const LandingPage: React.FC = () => {
               <span className="text-xl font-bold text-gray-900">VitalSync</span>
             </div>
             <div className="hidden md:flex space-x-8 text-sm font-medium text-gray-600">
-              <a href="#problème" className="hover:text-blue-600 transition">Problème</a>
-              <a href="#solution" className="hover:text-blue-600 transition">Solution</a>
-              <a href="#features" className="hover:text-blue-600 transition">Fonctionnalités</a>
-              <a href="#pricing" className="hover:text-blue-600 transition">Tarifs</a>
+              <a href="#problème" onClick={(e) => scrollToSection(e, 'problème')} className="hover:text-blue-600 transition">Problème</a>
+              <a href="#solution" onClick={(e) => scrollToSection(e, 'solution')} className="hover:text-blue-600 transition">Solution</a>
+              <a href="#features" onClick={(e) => scrollToSection(e, 'features')} className="hover:text-blue-600 transition">Fonctionnalités</a>
+              <a href="#pricing" onClick={(e) => scrollToSection(e, 'pricing')} className="hover:text-blue-600 transition">Tarifs</a>
             </div>
             <div className="flex items-center space-x-4">
               <Link to="/login" className="text-sm font-medium text-gray-600 hover:text-blue-600 transition">Connexion</Link>
